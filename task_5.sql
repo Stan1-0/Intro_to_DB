@@ -1,0 +1,1 @@
+INSERT INTO Customer VALUES (1, 'Cole Baido', 'cbaidoo@sandtech.com', '123 Happiness Ave.')
