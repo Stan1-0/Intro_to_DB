@@ -1,3 +1,8 @@
+CREATE TABLE IF NOT EXISTS Authors(
+    author_id INT PRIMARY KEY AUTO_INCREMENT,
+    author_name VARCHAR(215)
+);
+
 CREATE TABLE IF NOT EXISTS Books(
     book_id INT PRIMARY KEY AUTO_INCREMENT,
     title VARCHAR(130),
@@ -7,11 +12,6 @@ CREATE TABLE IF NOT EXISTS Books(
     FOREIGN KEY (author_id) REFERENCES Authors(author_id)
 );
 
-CREATE TABLE IF NOT EXISTS Authors(
-    author_id INT PRIMARY KEY AUTO_INCREMENT,
-    author_name VARCHAR(215),
-);
-
 CREATE TABLE IF NOT EXISTS Customers(
     customer_id INT PRIMARY KEY AUTO_INCREMENT,
     customer_name VARCHAR(215),
@@ -19,7 +19,7 @@ CREATE TABLE IF NOT EXISTS Customers(
     address TEXT
 );
 
-CREATE TABLE IF NOT EXISTS Order(
+CREATE TABLE IF NOT EXISTS Orders(
     order_id INT PRIMARY KEY AUTO_INCREMENT,
     customer_id INT,
     order_date DATE,
@@ -31,6 +31,6 @@ CREATE TABLE IF NOT EXISTS Order_Details(
     order_id INT,
     book_id INT,
     quantity DOUBLE,
-    FOREIGN KEY (book_id) REFERENCES Books(book_id)
+    FOREIGN KEY (book_id) REFERENCES Books(book_id),
     FOREIGN KEY (order_id) REFERENCES Orders(order_id)
 );

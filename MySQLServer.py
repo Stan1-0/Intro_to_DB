@@ -18,8 +18,10 @@ def create_database():
         #close connection
         mydb.close()
         print("Database 'alx_book_store' created successfully!")
-        
+   
     except mysql.connector.Error as error:
         print(f"Failed to connect to MYSQL server or create database: {error}")
         
-        
+
+if __name__ == "__main__":
+    create_database()
